@@ -39,7 +39,7 @@ class App:
 
     def add_webcam(self, label):
         if 'cap' not in self.__dict__:
-            self.cap = cv2.VideoCapture(2)
+            self.cap = cv2.VideoCapture(0)
 
         self._label = label
         self.process_webcam()
@@ -60,7 +60,7 @@ class App:
 
         label = test(
                 image=self.most_recent_capture_arr,
-                model_dir='/home/phillip/Desktop/todays_tutorial/27_face_recognition_spoofing/code/face-attendance-system/Silent-Face-Anti-Spoofing/resources/anti_spoof_models',
+                model_dir='C:\Users\HP\Downloads\face-attendance-system-master\face-attendance-system-master',
                 device_id=0
                 )
 
@@ -83,7 +83,7 @@ class App:
 
         label = test(
                 image=self.most_recent_capture_arr,
-                model_dir='/home/phillip/Desktop/todays_tutorial/27_face_recognition_spoofing/code/face-attendance-system/Silent-Face-Anti-Spoofing/resources/anti_spoof_models',
+                model_dir='',
                 device_id=0
                 )
 
@@ -94,13 +94,13 @@ class App:
             if name in ['unknown_person', 'no_persons_found']:
                 util.msg_box('Ups...', 'Unknown user. Please register new user or try again.')
             else:
-                util.msg_box('Hasta la vista !', 'Goodbye, {}.'.format(name))
+                util.msg_box('unknown !', 'Goodbye, {}.'.format(name))
                 with open(self.log_path, 'a') as f:
                     f.write('{},{},out\n'.format(name, datetime.datetime.now()))
                     f.close()
 
         else:
-            util.msg_box('Hey, you are a spoofer!', 'You are fake !')
+            util.msg_box('Hey, you are a fraud!', 'You are fake !')
 
 
     def register_new_user(self):
