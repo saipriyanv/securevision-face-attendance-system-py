@@ -31,14 +31,14 @@ def get_img_label(window):
 
 def get_text_label(window, text):
     label = tk.Label(window, text=text)
-    label.config(font=("sans-serif", 21), justify="left")
+    label.config(font=("arial", 22), justify="left")
     return label
 
 
 def get_entry_text(window):
     inputtxt = tk.Text(window,
                        height=2,
-                       width=15, font=("Arial", 32))
+                       width=15, font=("arial", 32))
     return inputtxt
 
 
